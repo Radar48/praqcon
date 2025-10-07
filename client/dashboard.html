@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praqcon | Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div>
+                <h1 id="welcome-message">Welcome back,  🌸</h1>
+                <p>Your Skin Story Matters. Let's check in.</p>
+            </div>
+            <form>
+                <button type="submit" class="logout-button">LogOut</button>
+            </form>
+        </header>
+
+        <section class="mood">
+            <h2>How do you feel today? </h2>
+            <select name="mood" id="mood-select">
+                <option value="Glowing">Glowing</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Irritated">Irritated</option>
+            </select>
+        </section>
+
+        <section class="routine">
+            <h2>Today's Routine</h2>
+
+            <ul>
+                <li><input type="checkbox"/>Cleanser</li>
+                <li><input type="checkbox"/>Toner</li>
+                <li><input type="checkbox"/>Moisturizer</li>
+                <li><input type="checkbox"/>SPF</li>
+            </ul>
+        </section>
+
+        <section class="products">
+            <h2>Your Products.</h2>
+            <form action="" id="product-form">
+                <div class="product-entry">
+                    <label for="cleanser">Cleanser: </label>
+                    <input type="text" id="cleanser" name="cleanser" placeholder="e.g. Foaming Cleanser">
+                    <input type="text" id="cleanser-feeling" name="cleanserFeeling" placeholder="After Use: ">
+                 </div>
+                 <div class="product-entry">
+                    <label for="toner">Toner: </label>
+                    <input type="text" id="toner" name="toner" placeholder="e.g. Hydrating Toner">
+                    <input type="text" id="toner-feeling" name="tonerFeeling" placeholder="After Use: ">
+                 </div>
+                 <div class="product-entry">
+                    <label for="moisturizer">Moisturizer: </label>
+                    <input type="text" id="moisturizer" name="moisturizer" placeholder="e.g. Gel Moisturizer">
+                    <input type="text" id="moisturizer-feeling" name="moisturizerFeeling" placeholder="After Use: ">
+                 </div>
+                 <div class="product-entry">
+                    <label for="spf">SPF: </label>
+                    <input type="text" id="spf" name="spf" placeholder="e.g. SPF 30 Sunscreen">
+                    <input type="text" id="spf-feeling" name="spfFeeling" placeholder="After Use: ">
+                 </div>
+                 <div class="product-entry">
+                    <label for="others">Anything Else: </label>
+                    <input type="text" id="others" name="others" placeholder="e.g. I also...">
+                    <input type="text" id="other-feeling" name="otherFeeling" placeholder="After Use: ">
+                 </div>
+                 <button type="button">Save Products</button>
+            </form>     
+        </section>
+
+
+        <section class="progress">
+            <h2>Progress Tracker</h2>
+            <form action="" id="progress-form">
+                <div class="progress-upload">
+                    <label for="before-photo">Before Photo: </label>
+                    <input type="file" id="before-photo" accept="image/*" required>
+
+                    <label for="after-photo">After Photo: </label>
+                    <input type="file" id="after-photo" accept="image/*" required>
+                </div>
+
+                <button type="button">Compare Photos</button>
+            </form>
+
+            <div id="progress-preview" style="margin-top: 20px;"></div>
+            <div id="routine-log" style="margin-top: 20px;"></div>
+        </section>
+
+        <section class="feedback">
+            <h2 id="feedback-heading">Feedback</h2>
+            <button id="toggle-feedback" style="margin-bottom: 15px;">Switch to Summary View</button>
+            <div id="ai-feedback-display"></div>
+        </section>
+
+        <section class="feedback-history">
+            <h2>Feedback History</h2>
+            <div id="history-list"></div>
+        </section>
+
+        <section class="clear-history">
+            <h2>Clear Feedback History</h2>
+            <button id="clear-history-button" style="background-color: #d9534f; color: white; padding: 10px 16px; border: none; border-radius: 6px; cursor: pointer;">
+                Clear History
+            </button>
+            <p id="clear-confirmation" style="margin-top: 10px; color: #5cb85c;"></p>
+        </section>
+
+        <section class="journal">
+            <h2>My Journal</h2>
+            <form id="journal-form">
+                <textarea id="journal-entry" rows="6" placeholder="Write anything you want to reflect on..."></textarea>
+                <button type="button">Save Entry</button>
+            </form>
+            <div id="journal-log" style="margin-top: 20px;"></div>
+        </section>
+
+        <section class="reminders">
+            <h2>Reminders</h2>
+            <form action="" id="reminder-form">
+                <div class="reminder-group">
+                    <label for="reminder-time">Set Reminder Time: </label>
+                    <input type="time" id="reminder-time" name="reminderTime" required>
+                </div>
+
+                <div class="reminder-group">
+                    <label for="reminder-message">Message: </label>
+                    <input type="text" id="reminder-message" name="reminderMessage" placeholder="e.g. Apply Evening moisturizer. " required>
+                </div>
+
+                <div class="reminder-group">
+                    <label for="reminder-repeat">Repeat: </label>
+                    <select name="reminderRepeat" id="reminder-repeat">
+                        <option value="none">Just Once</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+
+                <button type="submit">Set Reminder.</button>
+            </form>
+            <div class="hydration-tracker" style="margin-top: 25px;">
+                <h2>Hydration Tracker</h2>
+                <p id="hydration-count">You've had <strong>0</strong> glasses of water today.</p>
+                <button id="add-water" type="button">+ Add Glass</button>
+            </div>
+
+            <div class="reminder-display" style="margin-top: 15px;"></div>
+        </section>
+
+        <section class="profile">
+            <h2>Create My Profile</h2>
+            <form action="" id="profile-form">
+                <label for="skin-type">Skin Type: </label>
+                <select name="skinType" id="skin-type" required>
+                    <option value="">Select your skin type: </option>
+                    <option value="Dry">Dry</option>
+                    <option value="oily">Oily</option>
+                    <option value="combination">Combination</option>
+                    <option value="Sensitive">Sensitive</option>
+                    <option value="Normal">Normal</option>
+
+                </select>
+                <label for="goal">Your Skin Goal: </label>
+                <input type="text" id="goal" name="goal" placeholder="eg Reduce acne.">
+                <p id="user-email" style="display: none;">Email: lucy@example.com</p>
+                <button type="submit">Generate Profile</button>
+            </form>
+            <div id="profile-display" style="margin-top: 20px;"></div>
+        </section>
+    </div>
+    <script type="module" src="scripts/dashboard.js"></script>
+</body>
+</html>

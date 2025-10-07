@@ -1,0 +1,409 @@
+body {
+    font-family: 'poppins' sans-serif;
+    background: linear-gradient(to bottom right, #aee2ff, #ffc7d1);
+    margin: 0;
+    padding: 20px;
+}
+.dashboard {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1{
+    color: #8e44ad;
+    margin-bottom: 5px;
+}
+
+section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #dcc6e0;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+}
+section h2{
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #dcc6e0;
+}
+
+.products form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.product-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.products label{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.products input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.products button{
+    margin-top: 15px;
+    border-color: #a3c4f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.products button:hover{
+    background-color: #89b2e0;
+}
+
+.logout-button {
+    background-color: #f08080;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button:hover {
+    background-color: #e06666;
+}
+
+.profile form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.profile input, .profile select{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.profile button{
+    background-color: #a3c4f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profile button:hover {
+    background-color: #89b2e0;
+}
+
+.reminder-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.reminders {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #dcc6e0;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+}
+
+.reminder-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reminder-group label {
+    font-weight: bold;
+    color: #5a5a5a;
+}
+
+.reminder-group input,
+.reminder-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#reminder-form button {
+    background-color: #a3c4f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+#reminder-form button:hover {
+    background-color: #89b2e0;
+}
+
+.reminder-display div {
+    background-color: #e6f7ff;
+    border-left: 5px solid #5bc0de;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', sans-serif;
+}
+.hydration-tracker {
+    background-color: #f0f9ff;
+    border-left: 5px solid #5bc0de;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#add-water {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+#add-water:hover {
+    background-color: #31b0d5;
+}
+
+.progress form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.progress-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress label {
+    font-weight: bold;
+    color: #5a5a5a;
+}
+
+.progress input[type="file"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.progress button {
+    background-color: #a3c4f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.progress button:hover {
+    background-color: #89b2e0;
+}
+
+.feedback {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    background: linear-gradient(to botton right, #fef6ff, #e0f7fa);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.1);
+    border-left: 6px solid #ba68c8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.feedback h2 {
+    color: #6a1b9a;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feedback h2 {
+    color: #6a1b9a;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#toggle-feedback {
+    background-color: #ba68c8;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#toggle-feedback:hover {
+    background-color: #9c4dcc;
+}
+
+
+.ai-feedback-display {
+    background-color: #ffffff;
+    border: 5px dashed #ba68c8;
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#ai-feedback-display:hover {
+    background-color: #f3e5f5;
+}
+
+.feedback-history,
+.journal {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #dcc6e0;
+    border-radius: 15px;
+    background-color: #fff8f8;
+}
+
+.feedback-history h2,
+.journal h2 {
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+.history-entry,
+.journal-entry {
+    background-color: #fefefe;
+    border-left: 4px solid #ba68c8;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#journal-entry {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#journal-form button {
+    background-color: #ba68c8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#journal-form button:hover {
+    background-color: #9c4dcc;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .dashboard {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    section {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .logout-button {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .progress-upload,
+    .reminder-group,
+    .product-entry,
+    .profile form,
+    .reminders form {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
