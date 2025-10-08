@@ -1,23 +1,19 @@
 
 
-// Import the functions you need from the SDKs you need
+// Firebase configuration using environment variables
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBjSDy3PgFVJvJPqaYEus-Y3lW7HCkz3KI",
-  authDomain: "praqcon.firebaseapp.com",
-  projectId: "praqcon",
-  storageBucket: "praqcon.appspot.com",
-  messagingSenderId: "114862281833",
-  appId: "1:114862281833:web:393928d04ce51d7d39bef8",
-  measurementId: "G-LZNFFKDPCL"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
