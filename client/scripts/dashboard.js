@@ -43,6 +43,45 @@ document.addEventListener("DOMContentLoaded", () => {
     initFeedback(name);
     initProducts();
 
+const beforePhotoInput = document.getElementById("before-photo");
+const afterPhotoInput = document.getElementById("after-photo");
+const compareButton = document.querySelector("#progress-form button");
+const progressPreview = document.getElementById("progress-preview");
+
+compareButton.addEventListener("click", () => {
+    const beforeFile = beforePhotoInput.files[0];
+    const afterFile = afterPhotoInput.files[0];
+
+    if (!beforeFile || !afterFile) {
+        alert("Please upload both photos to compare.");
+        return;
+    }
+
+    const beforeReader = new FileReader();
+    const afterReader = new FileReader();
+
+    beforeReader.onload = () => {
+        const beforeImg = document.createElement("img");
+        beforeImg.src = beforeReader.result;
+        beforeImg.style.width = "200px";
+        beforeImg.style.marginRight = "20px";
+
+        afterReader.onload = () => {
+        const afterImg = document.createElement("img");
+        afterImg.src = afterReader.result;
+        afterImg.style.width = "200px";
+
+        progressPreview.innerHTML = "<h3>Before vs After</h3>";
+        progressPreview.appendChild(beforeImg);
+        progressPreview.appendChild(afterImg);
+        };
+
+        afterReader.readAsDataURL(afterFile);
+    };
+
+    beforeReader.readAsDataURL(beforeFile);
+});
+
    // JOURNAL LOGIC
 const journalForm = document.getElementById("journal-form");
 const journalEntry = document.getElementById("journal-entry");
@@ -54,16 +93,16 @@ journalLog.innerHTML = savedEntries.map(entry => `<p>📝 ${entry}</p>`).join(""
 
 // Save new entry
 journalForm.querySelector("button").addEventListener("click", () => {
-  const entry = journalEntry.value.trim();
-  if (!entry) return;
+    const entry = journalEntry.value.trim();
+    if (!entry) return;
 
-  const timestamp = new Date().toLocaleString();
-  const formattedEntry = `${timestamp} – ${entry}`;
+    const timestamp = new Date().toLocaleString();
+    const formattedEntry = `${timestamp} – ${entry}`;
 
-  savedEntries.push(formattedEntry);
-  localStorage.setItem("praqconJournal", JSON.stringify(savedEntries));
-  journalLog.innerHTML += `<p>📝 ${formattedEntry}</p>`;
-  journalEntry.value = "";
+    savedEntries.push(formattedEntry);
+    localStorage.setItem("praqconJournal", JSON.stringify(savedEntries));
+    journalLog.innerHTML += `<p>📝 ${formattedEntry}</p>`;
+    journalEntry.value = "";
 }); 
 });
 console.log("Dashboard JS is running");
